@@ -4,7 +4,6 @@ import { EventsComponent } from './events.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DateFilterModule } from 'src/app/private/components/date-filter/date-filter.module';
-import { LoaderModule } from 'src/app/private/components/loader/loader.module';
 import { EventModule } from './event/event.module';
 import { EventDeliveriesModule } from './event-deliveries/event-deliveries.module';
 import { DropdownComponent } from 'src/app/components/dropdown/dropdown.component';
@@ -18,20 +17,7 @@ const routes: Routes = [{ path: '', component: EventsComponent }];
 
 @NgModule({
 	declarations: [EventsComponent],
-	imports: [
-		CommonModule,
-		ReactiveFormsModule,
-		DateFilterModule,
-		RouterModule.forChild(routes),
-		EventModule,
-		EventDeliveriesModule,
-		DropdownComponent,
-		ButtonComponent,
-		ListItemComponent,
-		CardComponent,
-        ChartComponent,
-        SkeletonLoaderComponent
-	],
+	imports: [CommonModule, ReactiveFormsModule, DateFilterModule, RouterModule.forChild(routes), EventModule, EventDeliveriesModule, DropdownComponent, ButtonComponent, ListItemComponent, CardComponent, ChartComponent, SkeletonLoaderComponent],
 	providers: [DatePipe]
 })
 export class EventsModule {}
